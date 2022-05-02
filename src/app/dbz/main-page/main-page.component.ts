@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 
 @Component({
@@ -8,29 +9,17 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 export class MainPageComponent{
 
-  personajes: Personaje[]= [
-    {
-      nombre: 'Goku',
-      poder:15000
-  },
-  {
-    nombre: 'Vegeta', 
-    poder: 9000
-  }
-  ];
-
   nuevo:Personaje={
     nombre: 'Maestro Roshi',
     poder: 1000
-  }
-
-  agregarNuevoPersonaje(argumento:Personaje){
-    console.log('Main page Component');
-    console.log(argumento);
-    this.personajes.push(argumento)
-    
-    
-  }
+  }  
+ /*  get personajes() : Personaje[] { //con este get, traigo la infode mis pesonajes del servicio
+     return this.dbzService.personajes
+  } */
   
-
+  /* constructor(private dbzService: DbzService){ // esto es una Inyecccion de dependencia.
+  } */
+  constructor(){
+    
+  }
 }
